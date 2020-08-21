@@ -1,0 +1,24 @@
+{{ define "main" }}
+<main aria-role="main">
+    <div class="splash">
+        {{ if .Site.Params.Portrait.Path }}
+        <img src="{{ .Site.Params.Portrait.Path }}" class="circle" alt="{{ .Site.Params.Portrait.Alt }}"
+            style="max-width:{{ .Site.Params.Portrait.MaxWidth }}" />
+        {{ end }}
+
+        <h1>{{ .Site.Title }}<span class="highlight">.<span></h1>
+        {{- with .Site.Params.handle }}
+        <span class="handle">@{{.}}</span>
+        {{- end }}
+        {{- with .Site.Params.homeSubtitle }}
+        <p class="tagline">{{.partone}}<br>{{.parttwo}}</p>
+        {{- end }}
+
+        {{- with .Site.Params.social }}
+        <div class="social-icons">
+            {{ partial "social-icons.html" . }}
+        </div>
+        {{- end }}
+    </div>
+</main>
+{{ end }}

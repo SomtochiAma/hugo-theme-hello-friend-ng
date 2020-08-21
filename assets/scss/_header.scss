@@ -1,0 +1,52 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  padding: 40px;
+
+  &__right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    @media #{$media-size-phone} {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 2rem;
+    width: 1000px;
+    max-width: 100%;
+    @media #{$media-size-phone} {
+      margin: 0;
+    }
+  }
+
+  @media #{$media-size-phone} {
+    padding: 40px 0;
+  }
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.theme-toggler {
+  fill: currentColor;
+}
+
+.unselectable {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
